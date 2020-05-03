@@ -12,14 +12,9 @@ function createWindow() {
     },
   });
   mainWindow.loadFile("index.html");
-  mainWindow.on("closed", function () {
-    mainWindow = null;
-  });
-
-  setTimeout(() => {
-    console.log("here??");
+  mainWindow.webContents.once("dom-ready", () => {
     autoUpdater.checkForUpdatesAndNotify();
-  }, 3000);
+  });
 }
 
 app.on("ready", () => {
