@@ -1,6 +1,6 @@
 {
   "name": "electron-auto-update-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "main.js",
   "repository": {
@@ -9,8 +9,8 @@
   },
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --win --publish never",
-    "deploy": "electron-builder build --win --publish always"
+    "build": "rm -rf dist && electron-builder build --win --publish never",
+    "deploy": "rm -rf dist && electron-builder build --win --publish always"
   },
   "author": "",
   "license": "ISC",
