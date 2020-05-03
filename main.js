@@ -16,9 +16,10 @@ function createWindow() {
     mainWindow = null;
   });
 
-  mainWindow.once("ready-to-show", () => {
+  setTimeout(() => {
+    console.log("here??");
     autoUpdater.checkForUpdatesAndNotify();
-  });
+  }, 3000);
 }
 
 app.on("ready", () => {
